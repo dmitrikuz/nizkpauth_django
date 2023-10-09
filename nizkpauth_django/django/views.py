@@ -4,7 +4,6 @@ from django.views import View
 
 from nizkpauth.exceptions import InvalidProofFormat
 from nizkpauth.prover import Proof
-from nizkpauth_django.utils import validate_proof
 
 
 class NIZKPBaseAuthView(View):
@@ -14,7 +13,6 @@ class NIZKPBaseAuthView(View):
         if proof_data is not None:
             try:
                 proof = Proof.from_encoded(proof_data)
-                validate_proof(proof)
 
             except InvalidProofFormat as e:
                 return HttpResponse("Authentication failed", status=401)

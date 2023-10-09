@@ -6,6 +6,6 @@ def pytest_configure():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nizkpauth_tests.settings')
     django.setup()
     call_command('migrate', 'core', 'zero')
-    call_command('makemigrations')
-    call_command('migrate')
+    call_command('makemigrations', 'core')
+    call_command('migrate', 'core')
 
