@@ -1,2 +1,2 @@
 # nizkpauth_django
-Django and Django Rest Framework(DRF) extension for NIZKP Authentication
+Django and DRF extension of nizkpauth library used for passwordless user authentication based on zero-knowledge proofs
